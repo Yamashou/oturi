@@ -21,3 +21,21 @@ while True:
     JyuNow = int(JyuNow)
     GoNow = int(GoNow)
     ItiNow = int(ItiNow)
+    NowMoney = ManNow * 10000 + GosenNow * 5000 + SenNow * 1000 + HyakuNow * 100 + GohyakuNow * 500 + GojyuNow * 50 + JyuNow * 10 + ItiNow + GoNow * 5
+    print("合計{0}円" .format(NowMoney))
+    Pay = input('お支払い金額は？：')
+    Pay = int(Pay)
+    Zan = NowMoney - Pay
+    if Zan < 0 :
+        print("お支払い限度を超えています")
+    mankura = int(Pay / 10000)
+    senkura = int((Pay - mankura *10000)  / 1000)
+    hyakura = int((Pay - (mankura *10000 + senkura *1000 ))/100)
+    jyukura = int((Pay - (mankura * 10000 + senkura *1000 + hyakura * 100)) / 10)
+    itikura = int((Pay - (mankura * 10000 + senkura *1000 + hyakura * 100 + jyukura * 10)))
+    Paymai = [mankura,senkura,hyakura,jyukura,itikura]
+    count=0
+    for z in Paymai:
+        if z < 0:
+            count++
+            
