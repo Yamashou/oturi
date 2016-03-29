@@ -37,8 +37,8 @@ if __name__ == "__main__":
     saifu={}
     print("まずお財布の中身をお聞きします...")
     for mtype in money_type:
-        saifu[mtype]= int(raw_input(str(mtype)+ "円は何枚？\n>"))
-    kakaku=int(raw_input("いくらの商品を買いますか？\n>"))
+        saifu[mtype]= int(input(str(mtype)+ "円は何枚？\n>"))
+    kakaku=int(input("いくらの商品を買いますか？\n>"))
     print("最適な支払い方法は.\n.\n.\n")
     bestPttern=smart_pay(saifu,kakaku)
     if bestPttern is None:
